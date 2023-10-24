@@ -1,0 +1,72 @@
+:root {
+  --color-gray: #333333;
+  --color-gray-dark: #222222;
+  --color-gray-light: #cccccc;
+  --color-ongoing: #98c1d9;
+  --color-done: #ee6c4f;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+body {
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+  font-family: sans-serif;
+}
+.app {
+  min-height: 100vh;
+  background-color: var(--color-gray);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.column {
+  background-color: var(--color-gray-dark);
+  width: 33%;
+  min-height: 20rem;
+  max-width: 20rem;
+  margin: 0 0.5rem;
+  border-radius: 4px;
+  padding: 0.5rem;
+}
+.column p {
+  margin: 8px 0;
+}
+.task {
+  background-color: rgb(255, 255, 255);
+  color: black;
+  border-radius: 4px;
+  min-height: 5rem;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.task p {
+  font-weight: 600;
+  padding: 0.2rem;
+  border-radius: 4px;
+}
+.bottomWrapper {
+  display: flex;
+  justify-content: space-between;
+}
+.status {
+  font-size: 14px;
+  padding: 0.25rem;
+  border-radius: 4px;
+}
+/**/
+.planned {
+  background-color: var(--color-gray-light);
+}
+.ongoing {
+  background-color: var(--color-ongoing);
+}
+.done {
+  background-color: var(--color-done);
+}
