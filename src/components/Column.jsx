@@ -28,7 +28,6 @@ const Column = ({ state }) => {
       }}
       onDrop={() => {
         moveTask(draggedTask, state);
-        console.log(draggedTask);
         setDraggetTask(null);
         setDrop(false);
       }}

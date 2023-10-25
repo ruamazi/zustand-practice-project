@@ -56,11 +56,17 @@ body {
   font-weight: 600;
   padding: 0.2rem;
   border-radius: 4px;
+  overflow-wrap: break-word;
 }
 .bottomWrapper {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+.bottomWrapper p {
+  text-transform: capitalize;
+  padding: 5px 15px;
+  font-size: 14px;
 }
 .status {
   font-size: 14px;
@@ -83,6 +89,10 @@ body {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 10px;
+}
+.title-wrapper p {
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 .title-wrapper button {
   all: unset;
