@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useStore } from "../store";
 import Task from "./Task";
+import { GrAdd } from "react-icons/gr";
 
 const Column = ({ state }) => {
   const [text, setText] = useState("");
@@ -17,7 +18,7 @@ const Column = ({ state }) => {
 
   return (
     <div
-      className={`column ${drop && "drop"}`}
+      className={`column ${drop ? "drop" : ""}`}
       onDragOver={(e) => {
         e.preventDefault();
         setDrop(true);
@@ -34,7 +35,9 @@ const Column = ({ state }) => {
     >
       <div className="title-wrapper">
         <p> {state} </p>
-        <button onClick={() => setIsOpen(true)}>Add</button>
+        <button onClick={() => setIsOpen(true)}>
+          <GrAdd />
+        </button>
       </div>
 
       {tasks.map((t, i) => (
@@ -52,6 +55,12 @@ const Column = ({ state }) => {
               }}
             >
               Submit
+            </button>
+            <button
+              onClick={() => setIsOpen(false)}
+              style={{ backgroundColor: "salmon", borderColor: "salmon" }}
+            >
+              Cancel
             </button>
           </div>
         </div>
