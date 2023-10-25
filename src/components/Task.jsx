@@ -1,25 +1,36 @@
+import { useStore } from "../store";
+import { BsFillTrash3Fill } from "react-icons/bs";
+
 const Task = ({ title }) => {
-  const planned = "planned";
-  const ongoing = "ongoing";
-  const done = "done";
-  const STATUS = "ongoing";
+  const task = useStore((store) => store.tasks.find((t) => t.title === title));
+  const deleteTask = useStore((store) => store.deleteTask);
+  const setDraggetTask = useStore((store) => store.setDraggetTask);
+
   return (
-    <div className="task">
-      <p> {title} </p>
+    <div
+      className="task"
+      draggable
+      onDragStart={() => {
+        setDraggetTask(task.title);
+      }}
+    >
+      <p> {task.title} </p>
       <div className="bottomWrapper">
-        <div></div>
+        <div className="trash" onClick={() => deleteTask(title)}>
+          <BsFillTrash3Fill />
+        </div>
         <p
           className={
-            STATUS === "done"
-              ? done
-              : STATUS === "planned"
+            task.state === "done"
+              ? "done"
+              : task.state === "planned"
               ? "planned"
-              : STATUS === "ongoing"
+              : task.state === "ongoing"
               ? "ongoing"
               : ""
           }
         >
-          {STATUS}
+          {task.state}
         </p>
       </div>
     </div>
